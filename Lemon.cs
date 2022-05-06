@@ -6,6 +6,12 @@ public class Car
   public string MakeModel;
   public int Prices;
   public int Miles;
+
+  public bool WorthBuying(int maxPrice)
+  {
+    return (Prices <= maxPrice);
+  }
+
 }
 
 public class Program
@@ -38,9 +44,26 @@ public class Program
 
 
 
-    List<Car> vars = new List<Car>() { volks, yugo, gmc, cat };
 
-    foreach (Car automobile in vars)
+
+    List<Car> cars = new List<Car>() { volks, yugo, gmc, cat };
+
+    Console.WriteLine("Enter maximum price:");
+    string stringMaxPrice = Console.ReadLine();
+    int maxPrice = int.Parse(stringMaxPrice);
+
+
+    List<Car> carsMatchingSearch = new List<Car>();
+
+    foreach (Car automobile in cars)
+    {
+      if (automobile.WorthBuying(maxPrice))
+      {
+        carsMatchingSearch.Add(automobile);
+      }
+    }
+
+    foreach (Car automobile in carsMatchingSearch)
     {
       Console.WriteLine(automobile.MakeModel);
     }
