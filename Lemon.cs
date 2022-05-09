@@ -7,6 +7,14 @@ public class Car
   public int Prices;
   public int Miles;
 
+  public Car(string makeModel, int price, int miles)
+
+  {
+    MakeModel = makeModel;
+    Prices = price;
+    Miles = miles;
+  }
+
   public bool WorthBuying(int maxPrice)
   {
     return (Prices <= maxPrice);
@@ -20,29 +28,10 @@ public class Program
   {
 
 
-    Car volks = new Car();
-    volks.MakeModel = "1975  volks";
-    volks.Prices = 1200;
-    volks.Miles = 386792;
-
-
-    Car yugo = new Car();
-    yugo.MakeModel = "1990 yugo";
-    yugo.Prices = 1000;
-    yugo.Miles = 900;
-
-
-    Car gmc = new Car();
-    gmc.MakeModel = "1990 gmc";
-    gmc.Prices = 13000;
-    gmc.Miles = 3900;
-
-    Car cat = new Car();
-    cat.MakeModel = "1990 cat";
-    cat.Prices = 105500;
-    cat.Miles = 977777;
-
-
+    Car volks = new Car("1975  volks", 1200, 34567);
+    Car yugo = new Car("1990 yugo", 1000, 900);
+    Car gmc = new Car("1990 gmc", 13000, 3900);
+    Car cat = new Car("1990 cat", 105500, 977777);
 
 
 
